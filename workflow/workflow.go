@@ -1,4 +1,4 @@
-package main
+package workflow
 
 // Go基于有向无环图的并发执行流
 // 参考链接：https://cc.topgoer.cn/blog-230.html

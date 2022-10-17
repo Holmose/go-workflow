@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/Holmose/go-workflow/workflow"
 )
 
 // WearUnderpantsAction 穿内裤任务
@@ -55,16 +56,16 @@ func (a *WearShoesNodeAction) Run(i interface{}) {
 }
 
 func main() {
-	wf := NewWorkFlow()
+	wf := workflow.NewWorkFlow()
 	// 构建节点
-	UnderpantsNode := NewNode(&WearUnderpantsAction{}) // 内裤
-	SocksNode := NewNode(&WearSocksAction{})           // 袜子
-	ShirtNode := NewNode(&ShirtNodeAction{})           // 衬衣
-	WatchNode := NewNode(&WatchNodeAction{})           // 手表
+	UnderpantsNode := workflow.NewNode(&WearUnderpantsAction{}) // 内裤
+	SocksNode := workflow.NewNode(&WearSocksAction{})           // 袜子
+	ShirtNode := workflow.NewNode(&ShirtNodeAction{})           // 衬衣
+	WatchNode := workflow.NewNode(&WatchNodeAction{})           // 手表
 
-	TrousersNode := NewNode(&WearTrouserNodeAction{}) // 裤子
-	ShoesNode := NewNode(&WearShoesNodeAction{})      // 鞋子
-	CoatNode := NewNode(&WearCoatNodeAction{})        // 外套
+	TrousersNode := workflow.NewNode(&WearTrouserNodeAction{}) // 裤子
+	ShoesNode := workflow.NewNode(&WearShoesNodeAction{})      // 鞋子
+	CoatNode := workflow.NewNode(&WearCoatNodeAction{})        // 外套
 
 	// 构建节点之间的关系
 	// 启始节点
